@@ -15,7 +15,7 @@ License:		LGPLv2.1 with exception or GPLv3
 URL:		http://qt.gitorious.org/qt-labs/messagingframework
 # git archive --remote git://gitorious.org/qt-labs/messagingframework.git \
 # --prefix=%{name}-%{version}-%{snap}/ %{snap} | xz > %{name}-%{version}-%{snap}.tar.xz
-Source0:		%{name}-%{version}%{snap}.tar.xz
+Source0:		%{name}-%{version}-%{snap}.tar.xz
 Source1:		qmf.sh
 Source2:		qmf-messageserver.desktop
 Patch0:		fix_docs_installation.patch
