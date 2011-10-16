@@ -5,7 +5,7 @@
 %define git 1
 #define gitdate %(date +%Y%m%d)
 %define gitdate 20110802
-%define snap 2011W37
+%define snap 2011W41
 
 %define major 1
 %define libname %mklibname %{name} %{major}
@@ -33,7 +33,8 @@ Patch5:		qmf-1.2.0-fix-lib-install-x86_64.patch
 BuildRequires:   pkgconfig(QtGui)
 BuildRequires:   qt4-assistant qt4-qdoc3
 BuildRequires:   fdupes > 1.50-0.PR2.2
-Requires:	%{libname} = %{version}-%{release}
+Requires:	%{libqmfmessageserver} = %{version}-%{release}
+Requires:	%{libqmfclient} = %{version}-%{release}
 
 %description
 The Qt Messaging Framework, QMF, consists of a C++ library and daemon server
@@ -44,7 +45,6 @@ This package contains:
  - a server application supporting multiple messaging transport mechanisms.
 
 %files
-%defattr(-,root,root,-)
 %config %{_sysconfdir}/profile.d/%{name}.sh
 %config %{_sysconfdir}/xdg/autostart/messageserver.desktop
 %{_bindir}/messageserver
@@ -55,14 +55,11 @@ This package contains:
 %{_libdir}/qmf/plugins/messageservices/libsmtp.so
 
 #--------------------------------------------------------------------
-%package -n %{libname}
+%package -n %{libqmfmessageserver}
 Summary:	Qt Messaging Framework (QMF) message server support library
 Group:		System/Libraries
-Obsoletes:	%{_lib}qmfclient1
-Obsoletes:	%{_lib}qmfmessageserver1
-Obsoletes:	%{_lib}qmfutil1
 
-%description -n %{libname}
+%description -n %{libqmfmessageserver}
 The Qt Messaging Framework, QMF, consists of a C++ library and daemon server
 process that can be used to build email clients, and more generally software
 that interacts with email and mail servers.
@@ -78,20 +75,62 @@ This package contains:
  - the message server support library. It provides assistance in developing GUI
    clients that access messaging data.
 
-%files -n %{libname}
+%files -n %{libqmfmessageserver}
 %defattr(-,root,root,-)
 %{_libdir}/libqmfmessageserver.so.%{major}*
+
+#--------------------------------------------------------------------
+%package -n %{libqmfclient}
+Summary:	Qt Messaging Framework (QMF) client library
+Group:		System/Libraries
+
+%description -n %{libqmfclient}
+The Qt Messaging Framework, QMF, consists of a C++ library and daemon server
+process that can be used to build email clients, and more generally software
+that interacts with email and mail servers.
+
+The Client library provides classes giving access to all messages stored on
+the device, via a uniform interface. It simplifies the task of creating
+messaging client applications, and permits other Messaging Framework
+applications to interact with messaging data where appropriate. New types of
+messages can be supported by the library without modification to existing
+client applications.
+
+This package contains a library for developing applications that work with
+messages.
+
+%files -n %{libqmfclient}
+%defattr(-,root,root,-)
 %{_libdir}/libqmfclient.so.%{major}*
 %dir %{_libdir}/qmf/
 %dir %{_libdir}/qmf/plugins/
 %dir %{_libdir}/qmf/plugins/contentmanagers/
 %{_libdir}/qmf/plugins/contentmanagers/libqmfstoragemanager.so
+
+#--------------------------------------------------------------------
+%package -n %{libqmfutil}
+Summary:	Qt Messaging Framework (QMF) messaging client utility library
+Group:		System/Libraries
+
+%description -n %{libqmfutil}
+The Qt Messaging Framework, QMF, consists of a C++ library and daemon server
+process that can be used to build email clients, and more generally software
+that interacts with email and mail servers.
+
+This package contains the messaging client utility library. It provides
+assistance in developing plugins for the Message Server daemon.
+
+%files -n %{libqmfutil}
+%defattr(-,root,root,-)
 %{_libdir}/libqmfutil.so.%{major}*
 
 #--------------------------------------------------------------------
 %package -n %{libnamedev}
 Summary:	Qt Messaging Framework Development Files
 Group:		Development/Other
+Requires:	pkgconfig(QtGui)
+Requires:	qt4-assistant qt4-qdoc3
+Requires:	fdupes > 1.50-0.PR2.2
 Requires:	%{libname} = %{version}-%{release}
 Provides:	%{name}-devel = %{version}-%{release}
 Provides:	lib%{name}-devel = %{version}-%{release}
@@ -105,7 +144,6 @@ This package contains the development files needed to build Qt applications
 using Qt Messaging Framework libraries.
 
 %files -n %{libnamedev}
-%defattr(-,root,root,-)
 %{_includedir}/qmfmessageserver/
 %{_includedir}/qmfclient/
 %{_libdir}/libqmfmessageserver.prl
@@ -120,7 +158,9 @@ using Qt Messaging Framework libraries.
 %package examples
 Summary:	Qt Messaging Framework (QMF) Examples
 Group:		System/X11
-Requires:	%{libname} = %{version}-%{release}
+Requires:	%{libqmfmessageserver} = %{version}-%{release}
+Requires:	%{libqmfclient} = %{version}-%{release}
+Requires:	%{libqmfutil} = %{version}-%{release}
 
 %description examples
 The Qt Messaging Framework, QMF, consists of a C++ library and daemon server
@@ -134,7 +174,6 @@ This package contains an example client application supporting common
 messaging functionality.
 
 %files examples
-%defattr(-,root,root,-)
 %{_bindir}/messagingaccounts
 %{_bindir}/qtmail
 %{_bindir}/serverobserver
@@ -147,7 +186,8 @@ messaging functionality.
 %package tests
 Summary:	Qt Messaging Framework (QMF) Tests
 Group:		System/X11
-Requires:	%{libname} = %{version}-%{release}
+Requires:	%{libqmfmessageserver} = %{version}-%{release}
+Requires:	%{libqmfclient} = %{version}-%{release}
 
 %description tests
 The Qt Messaging Framework, QMF, consists of a C++ library and daemon server
@@ -157,7 +197,6 @@ that interacts with email and mail servers.
 This package contains the tests for Qt Messaging Framework (QMF).
 
 %files tests
-%defattr(-,root,root,-)
 %{_libdir}/qmf/tests/
 
 #--------------------------------------------------------------------
@@ -174,14 +213,13 @@ that interacts with email and mail servers.
 This package contains the documentation for Qt Messaging Framework (QMF).
 
 %files doc
-%defattr(-,root,root,-)
 %dir %{_docdir}/qmf/
 %{_docdir}/qmf/qch/
 %{_docdir}/qmf/html/
 
 #--------------------------------------------------------------------
 %prep
-%setup -qn %{name}-%{version}%{?git:-%{snap}}
+%setup -q
 %patch0 -p1 -b .fix_docs_installation
 %patch1 -p1 -b .no_rpath_tests_benchmarks
 %patch2 -p1 -b .add_headers
