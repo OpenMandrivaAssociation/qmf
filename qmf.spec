@@ -71,7 +71,6 @@ This package contains:
    clients that access messaging data.
 
 %files -n %{libqmfmessageserver}
-%defattr(-,root,root,-)
 %{_libdir}/libqmfmessageserver.so.%{major}*
 
 #--------------------------------------------------------------------
@@ -95,7 +94,6 @@ This package contains a library for developing applications that work with
 messages.
 
 %files -n %{libqmfclient}
-%defattr(-,root,root,-)
 %{_libdir}/libqmfclient.so.%{major}*
 %dir %{_libdir}/qmf/
 %dir %{_libdir}/qmf/plugins/
@@ -116,7 +114,6 @@ This package contains the messaging client utility library. It provides
 assistance in developing plugins for the Message Server daemon.
 
 %files -n %{libqmfutil}
-%defattr(-,root,root,-)
 %{_libdir}/libqmfutil.so.%{major}*
 
 #--------------------------------------------------------------------
@@ -126,7 +123,9 @@ Group:		Development/Other
 Requires:	pkgconfig(QtGui)
 Requires:	qt4-assistant qt4-qdoc3
 Requires:	fdupes > 1.50-0.PR2.2
-Requires:	%{libname} = %{version}-%{release}
+Requires:	%{libqmfmessageserver} = %{version}-%{release}
+Requires:	%{libqmfclient} = %{version}-%{release}
+Requires:	%{libqmfutil} = %{version}-%{release}
 Provides:	%{name}-devel = %{version}-%{release}
 Provides:	lib%{name}-devel = %{version}-%{release}
 
