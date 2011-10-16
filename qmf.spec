@@ -28,6 +28,7 @@ Patch5:		qmf-1.2.0-fix-lib-install-x86_64.patch
 BuildRequires:   pkgconfig(QtGui)
 BuildRequires:   qt4-assistant qt4-qdoc3
 BuildRequires:   fdupes > 1.50-0.PR2.2
+BuildRequires:   pkgconfig(icu-io)
 Requires:	%{libqmfmessageserver} = %{version}-%{release}
 Requires:	%{libqmfclient} = %{version}-%{release}
 
