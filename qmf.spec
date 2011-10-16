@@ -1,14 +1,9 @@
-# QMF git repository
-# https://qt.gitorious.org/qt-labs/messagingframework
-# git clone git://gitorious.org/qt-labs/messagingframework.git
-
-%define git 1
-#define gitdate %(date +%Y%m%d)
-%define gitdate 20110802
 %define snap 2011W41
 
 %define major 1
-%define libname %mklibname %{name} %{major}
+%define libqmfmessageserver %mklibname qmfmessageserver %{major}
+%define libqmfutil %mklibname qmfutil %{major}
+%define libqmfclient %mklibname qmfclient %{major}
 %define libnamedev %mklibname %{name} -d
 
 Name:		qmf
@@ -20,7 +15,7 @@ License:		LGPLv2.1 with exception or GPLv3
 URL:		http://qt.gitorious.org/qt-labs/messagingframework
 # git archive --remote git://gitorious.org/qt-labs/messagingframework.git \
 # --prefix=%{name}-%{version}-%{snap}/ %{snap} | xz > %{name}-%{version}-%{snap}.tar.xz
-Source0:		%{name}-%{version}%{?git:-%{snap}}.tar.xz
+Source0:		%{name}-%{version}%{snap}.tar.xz
 Source1:		qmf.sh
 Source2:		qmf-messageserver.desktop
 Patch0:		fix_docs_installation.patch
@@ -31,7 +26,7 @@ Patch4:		qmf-1.2.0-fix_plugins_and_tests_installation_path_for_x86_64.patch
 Patch5:		qmf-1.2.0-fix-lib-install-x86_64.patch
 
 BuildRequires:   pkgconfig(QtGui)
-BuildRequires:   qt4-assistant qt4-qdoc3
+BuildRequires:   qt4-assistant qt4-qdoc
 BuildRequires:   fdupes > 1.50-0.PR2.2
 Requires:	%{libqmfmessageserver} = %{version}-%{release}
 Requires:	%{libqmfclient} = %{version}-%{release}
