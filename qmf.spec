@@ -1,4 +1,4 @@
-%define snap 2011W41
+%define snap 2011W47
 
 %define major 1
 %define libqmfmessageserver %mklibname qmfmessageserver %{major}
@@ -7,30 +7,27 @@
 %define libnamedev %mklibname %{name} -d
 
 Name:		qmf
-Summary:		Qt Messaging Framework (QMF)
+Summary:	Qt Messaging Framework (QMF)
 Group:		Development/Other
-Version:		2.0
-Release:		%mkrel -c %{snap} 1
-License:		LGPLv2.1 with exception or GPLv3
+Version:	2.0.0
+Release:	%mkrel -c %{snap} 1
+License:	LGPLv2.1 with exception or GPLv3
 URL:		http://qt.gitorious.org/qt-labs/messagingframework
 # git archive --remote git://gitorious.org/qt-labs/messagingframework.git \
 # --prefix=%{name}-%{version}-%{snap}/ %{snap} | xz > %{name}-%{version}-%{snap}.tar.xz
-Source0:		%{name}-%{version}-%{snap}.tar.xz
-Source1:		qmf.sh
-Source2:		qmf-messageserver.desktop
+Source0:	%{name}-%{version}-%{snap}.tar.xz
+Source1:	qmf.sh
+Source2:	qmf-messageserver.desktop
 Patch0:		fix_docs_installation.patch
 Patch1:		qmf-1.2.0-no_rpath_tests_benchmarks.patch
 Patch2:		qmf-1.2.0-add_headers.patch
 Patch3:		qmf-1.2.0-fix_plugins_and_tests_installation_path_for_x86.patch
 Patch4:		qmf-1.2.0-fix_plugins_and_tests_installation_path_for_x86_64.patch
 Patch5:		qmf-1.2.0-fix-lib-install-x86_64.patch
-
-BuildRequires:   pkgconfig(QtGui)
-BuildRequires:   qt4-assistant qt4-qdoc3
-BuildRequires:   fdupes > 1.50-0.PR2.2
-BuildRequires:   pkgconfig(icu-io)
-Requires:	%{libqmfmessageserver} = %{version}-%{release}
-Requires:	%{libqmfclient} = %{version}-%{release}
+BuildRequires:	pkgconfig(QtGui)
+BuildRequires:	qt4-assistant qt4-qdoc3
+BuildRequires:	fdupes > 1.50-0.PR2.2
+BuildRequires:	pkgconfig(icu-io)
 
 %description
 The Qt Messaging Framework, QMF, consists of a C++ library and daemon server
@@ -153,9 +150,6 @@ using Qt Messaging Framework libraries.
 %package examples
 Summary:	Qt Messaging Framework (QMF) Examples
 Group:		System/X11
-Requires:	%{libqmfmessageserver} = %{version}-%{release}
-Requires:	%{libqmfclient} = %{version}-%{release}
-Requires:	%{libqmfutil} = %{version}-%{release}
 
 %description examples
 The Qt Messaging Framework, QMF, consists of a C++ library and daemon server
@@ -181,8 +175,6 @@ messaging functionality.
 %package tests
 Summary:	Qt Messaging Framework (QMF) Tests
 Group:		System/X11
-Requires:	%{libqmfmessageserver} = %{version}-%{release}
-Requires:	%{libqmfclient} = %{version}-%{release}
 
 %description tests
 The Qt Messaging Framework, QMF, consists of a C++ library and daemon server
@@ -214,7 +206,7 @@ This package contains the documentation for Qt Messaging Framework (QMF).
 
 #--------------------------------------------------------------------
 %prep
-%setup -q
+%setup -qn %{name}-%{version}-%{snap}
 %patch0 -p1 -b .fix_docs_installation
 %patch1 -p1 -b .no_rpath_tests_benchmarks
 %patch2 -p1 -b .add_headers
@@ -242,5 +234,3 @@ mkdir -p %{buildroot}%{_sysconfdir}/xdg/autostart
 install -m 644 %{SOURCE2} %{buildroot}%{_sysconfdir}/xdg/autostart/messageserver.desktop
 
 %fdupes %{buildroot}%{_includedir}
-
-
