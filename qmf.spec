@@ -118,8 +118,8 @@ assistance in developing plugins for the Message Server daemon.
 %package -n %{libnamedev}
 Summary:	Qt Messaging Framework Development Files
 Group:		Development/Other
-Requires:	pkgconfig(QtGui)
-Requires:	qt4-assistant qt4-qdoc3
+Requires:	qt4-assistant
+Requires:	qt4-qdoc3
 Requires:	fdupes > 1.50-0.PR2.2
 Requires:	%{libqmfmessageserver} = %{version}-%{release}
 Requires:	%{libqmfclient} = %{version}-%{release}
