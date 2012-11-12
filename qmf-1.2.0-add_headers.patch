@@ -1,0 +1,278 @@
+--- /dev/null
++++ b/src/libraries/qmfclient/include/MailId
+@@ -0,0 +1 @@
++#include "qmailid.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/QMailAccount
+@@ -0,0 +1 @@
++#include "qmailaccount.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/QMailAccountConfiguration
+@@ -0,0 +1 @@
++#include "qmailaccountconfiguration.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/QMailAccountId
+@@ -0,0 +1 @@
++#include "qmailid.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/QMailAccountKey
+@@ -0,0 +1 @@
++#include "qmailaccountkey.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/QMailAccountListModel
+@@ -0,0 +1 @@
++#include "qmailaccountlistmodel.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/QMailAccountMessageSet
+@@ -0,0 +1 @@
++#include "qmailmessageset.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/QMailAccountSortKey
+@@ -0,0 +1 @@
++#include "qmailaccountsortkey.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/QMailAddress
+@@ -0,0 +1 @@
++#include "qmailaddress.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/QMailBase64Codec
+@@ -0,0 +1 @@
++#include "qmailcodec.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/QMailCodec
+@@ -0,0 +1 @@
++#include "qmailcodec.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/QMailContentManager
+@@ -0,0 +1 @@
++#include "qmailcontentmanager.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/QMailContentManagerFactory
+@@ -0,0 +1 @@
++#include "qmailcontentmanager.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/QMailContentManagerPlugin
+@@ -0,0 +1 @@
++#include "qmailcontentmanager.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/QMailFilterMessageSet
+@@ -0,0 +1 @@
++#include "qmailmessageset.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/QMailFolder
+@@ -0,0 +1 @@
++#include "qmailfolder.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/QMailFolderId
+@@ -0,0 +1 @@
++#include "qmailid.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/QMailFolderKey
+@@ -0,0 +1 @@
++#include "qmailfolderkey.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/QMailFolderMessageSet
+@@ -0,0 +1 @@
++#include "qmailmessageset.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/QMailFolderSortKey
+@@ -0,0 +1 @@
++#include "qmailfoldersortkey.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/QMailLineEndingCodec
+@@ -0,0 +1 @@
++#include "qmailcodec.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/QMailMessage
+@@ -0,0 +1 @@
++#include "qmailmessage.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/QMailMessageBody
+@@ -0,0 +1 @@
++#include "qmailmessage.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/QMailMessageContentDisposition
+@@ -0,0 +1 @@
++#include "qmailmessage.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/QMailMessageContentType
+@@ -0,0 +1 @@
++#include "qmailmessage.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/QMailMessageHeaderField
+@@ -0,0 +1 @@
++#include "qmailmessage.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/QMailMessageId
+@@ -0,0 +1 @@
++#include "qmailid.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/QMailMessageKey
+@@ -0,0 +1 @@
++#include "qmailmessagekey.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/QMailMessageListModel
+@@ -0,0 +1 @@
++#include "qmailmessagelistmodel.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/QMailMessageMetaData
+@@ -0,0 +1 @@
++#include "qmailmessage.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/QMailMessagePart
+@@ -0,0 +1 @@
++#include "qmailmessage.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/QMailMessagePartContainer
+@@ -0,0 +1 @@
++#include "qmailmessage.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/QMailMessageRemovalRecord
+@@ -0,0 +1 @@
++#include "qmailmessageremovalrecord.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/QMailMessageServer
+@@ -0,0 +1 @@
++#include "qmailmessageserver.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/QMailMessageSet
+@@ -0,0 +1 @@
++#include "qmailmessageset.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/QMailMessageSetContainer
+@@ -0,0 +1 @@
++#include "qmailmessageset.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/QMailMessageSetModel
+@@ -0,0 +1 @@
++#include "qmailmessageset.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/QMailMessageSortKey
+@@ -0,0 +1 @@
++#include "qmailmessagesortkey.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/QMailNewEmailHandler
+@@ -0,0 +1 @@
++#include "qmailnewmessagehandler.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/QMailNewMessageHandler
+@@ -0,0 +1 @@
++#include "qmailnewmessagehandler.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/QMailPassThroughCodec
+@@ -0,0 +1 @@
++#include "qmailcodec.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/QMailQuotedPrintableCodec
+@@ -0,0 +1 @@
++#include "qmailcodec.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/QMailRetrievalAction
+@@ -0,0 +1 @@
++#include "qmailserviceaction.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/QMailSearchAction
+@@ -0,0 +1 @@
++#include "qmailserviceaction.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/QMailServiceAction
+@@ -0,0 +1 @@
++#include "qmailserviceaction.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/QMailStorageAction
+@@ -0,0 +1 @@
++#include "qmailserviceaction.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/QMailStore
+@@ -0,0 +1 @@
++#include "qmailstore.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/QMailTimeStamp
+@@ -0,0 +1 @@
++#include "qmailtimestamp.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/QMailTransmitAction
+@@ -0,0 +1 @@
++#include "qmailserviceaction.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/QPrivatelyImplemented
+@@ -0,0 +1 @@
++#include "qprivateimplementation.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/QPrivatelyNoncopyable
+@@ -0,0 +1 @@
++#include "qprivateimplementation.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/ServiceConfiguration
+@@ -0,0 +1 @@
++#include "qmailaccountconfiguration.h"
+--- /dev/null
++++ b/src/libraries/qmfclient/include/Status
+@@ -0,0 +1 @@
++#include "qmailserviceaction.h"
+--- a/src/libraries/qmfclient/qmfclient.pro
++++ b/src/libraries/qmfclient/qmfclient.pro
+@@ -96,6 +96,8 @@ PRIVATE_HEADERS += bind_p.h \
+                    support/qcopchannelmonitor.h \
+                    support/qcopserver.h
+ 
++PUBLIC_HEADERS += include/*
++
+ HEADERS += $$PUBLIC_HEADERS $$PRIVATE_HEADERS
+ 
+ SOURCES += longstream.cpp \
+--- /dev/null
++++ b/src/libraries/qmfmessageserver/include/QMailAuthenticator
+@@ -0,0 +1 @@
++#include "qmailauthenticator.h"
+--- /dev/null
++++ b/src/libraries/qmfmessageserver/include/QMailMessageClassifier
+@@ -0,0 +1 @@
++#include "qmailmessageclassifier.h"
+--- /dev/null
++++ b/src/libraries/qmfmessageserver/include/QMailMessageService
+@@ -0,0 +1 @@
++#include "qmailmessageservice.h"
+--- /dev/null
++++ b/src/libraries/qmfmessageserver/include/QMailMessageServiceConfigurator
+@@ -0,0 +1 @@
++#include "qmailmessageservice.h"
+--- /dev/null
++++ b/src/libraries/qmfmessageserver/include/QMailMessageServiceEditor
+@@ -0,0 +1 @@
++#include "qmailmessageservice.h"
+--- /dev/null
++++ b/src/libraries/qmfmessageserver/include/QMailMessageServiceFactory
+@@ -0,0 +1 @@
++#include "qmailmessageservice.h"
+--- /dev/null
++++ b/src/libraries/qmfmessageserver/include/QMailMessageServicePlugin
+@@ -0,0 +1 @@
++#include "qmailmessageservice.h"
+--- /dev/null
++++ b/src/libraries/qmfmessageserver/include/QMailMessageSink
+@@ -0,0 +1 @@
++#include "qmailmessageservice.h"
+--- /dev/null
++++ b/src/libraries/qmfmessageserver/include/QMailMessageSource
+@@ -0,0 +1 @@
++#include "qmailmessageservice.h"
+--- /dev/null
++++ b/src/libraries/qmfmessageserver/include/QMailServiceConfiguration
+@@ -0,0 +1 @@
++#include "qmailserviceconfiguration.h"
+--- /dev/null
++++ b/src/libraries/qmfmessageserver/include/QMailTransport
+@@ -0,0 +1 @@
++#include "qmailtransport.h"
+--- a/src/libraries/qmfmessageserver/qmfmessageserver.pro
++++ b/src/libraries/qmfmessageserver/qmfmessageserver.pro
+@@ -33,6 +33,8 @@ PUBLIC_HEADERS += qmailauthenticator.h \
+                   qmailtransport.h \
+                   qmailheartbeattimer.h
+ 
++PUBLIC_HEADERS += include/*
++
+ HEADERS += $$PUBLIC_HEADERS $$PRIVATE_HEADERS
+ 
+ SOURCES += qmailauthenticator.cpp \

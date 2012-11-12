@@ -1,0 +1,134 @@
+Description: fix plugins and tests installation path for arch x86
+AUthor: Zé <ze@mageia.org>
+Original Author: Fathi Boudra <fathi.boudra@nokia.com>
+--- a/src/plugins/messageservices/imap/imap.pro
++++ b/src/plugins/messageservices/imap/imap.pro
+@@ -2,7 +2,7 @@ TEMPLATE = lib
+ TARGET = imap 
+ CONFIG += qmfmessageserver qmfclient plugin
+ 
+-target.path += $$QMF_INSTALL_ROOT/plugins/messageservices
++target.path += $$QMF_INSTALL_ROOT/lib/qmf/plugins/messageservices
+ 
+ QT += core network
+ 
+--- a/src/plugins/messageservices/pop/pop.pro
++++ b/src/plugins/messageservices/pop/pop.pro
+@@ -2,7 +2,7 @@ TEMPLATE = lib
+ TARGET = pop 
+ CONFIG += qmfclient qmfmessageserver plugin
+ 
+-target.path = $$QMF_INSTALL_ROOT/plugins/messageservices
++target.path = $$QMF_INSTALL_ROOT/lib/qmf/plugins/messageservices
+ 
+ QT = core network
+ 
+--- a/src/plugins/messageservices/qmfsettings/qmfsettings.pro
++++ b/src/plugins/messageservices/qmfsettings/qmfsettings.pro
+@@ -2,7 +2,7 @@ TEMPLATE = lib
+ TARGET = qmfsettings
+ CONFIG += qmfclient qmfmessageserver plugin
+ 
+-target.path += $$QMF_INSTALL_ROOT/plugins/messageservices
++target.path += $$QMF_INSTALL_ROOT/lib/qmf/plugins/messageservices
+ 
+ QT = core network
+ 
+--- a/src/plugins/messageservices/smtp/smtp.pro
++++ b/src/plugins/messageservices/smtp/smtp.pro
+@@ -3,7 +3,7 @@ TARGET = smtp
+ 
+ CONFIG += qmfclient qmfmessageserver plugin
+ 
+-target.path += $$QMF_INSTALL_ROOT/plugins/messageservices
++target.path += $$QMF_INSTALL_ROOT/lib/qmf/plugins/messageservices
+ 
+ QT = core network
+ 
+--- a/examples/listfilterplugin/listfilterplugin.pro
++++ b/examples/listfilterplugin/listfilterplugin.pro
+@@ -3,7 +3,7 @@ TARGET = listfilterplugin
+ CONFIG += qmfclient plugin
+ QT = core
+ 
+-target.path += $$QMF_INSTALL_ROOT/plugins/contentmanagers
++target.path += $$QMF_INSTALL_ROOT/lib/qmf/plugins/contentmanagers
+ 
+ DEFINES += PLUGIN_INTERNAL
+ 
+--- a/examples/qtmail/plugins/composers/email/email.pro
++++ b/examples/qtmail/plugins/composers/email/email.pro
+@@ -2,7 +2,7 @@ TEMPLATE = lib
+ TARGET = emailcomposer 
+ CONFIG += qmfclient qmfutil plugin
+ 
+-target.path += $$QMF_INSTALL_ROOT/plugins/composers
++target.path += $$QMF_INSTALL_ROOT/lib/qmf/plugins/composers
+ 
+ DEFINES += PLUGIN_INTERNAL
+ 
+--- a/examples/qtmail/plugins/viewers/generic/generic.pro
++++ b/examples/qtmail/plugins/viewers/generic/generic.pro
+@@ -2,7 +2,7 @@ TEMPLATE = lib
+ TARGET = genericviewer 
+ CONFIG += qmfclient qmfutil plugin
+ 
+-target.path += $$QMF_INSTALL_ROOT/plugins/viewers
++target.path += $$QMF_INSTALL_ROOT/lib/qmf/plugins/viewers
+ 
+ # Use webkit to render mail if available
+ contains(QT_CONFIG,webkit){
+--- a/src/plugins/contentmanagers/qmfstoragemanager/qmfstoragemanager.pro
++++ b/src/plugins/contentmanagers/qmfstoragemanager/qmfstoragemanager.pro
+@@ -3,7 +3,7 @@ TARGET = qmfstoragemanager
+ CONFIG += qmfclient plugin
+ QT = core
+ 
+-target.path += $$QMF_INSTALL_ROOT/plugins/contentmanagers
++target.path += $$QMF_INSTALL_ROOT/lib/qmf/plugins/contentmanagers
+ 
+ DEFINES += PLUGIN_INTERNAL
+ 
+--- a/benchmarks/tst_messageserver/tst_messageserver.pro
++++ b/benchmarks/tst_messageserver/tst_messageserver.pro
+@@ -3,7 +3,7 @@ CONFIG += qtestlib unittest
+ CONFIG += qmfmessageserver qmfclient
+ 
+ TARGET = tst_messageserver 
+-target.path += $$QMF_INSTALL_ROOT/tests
++target.path += $$QMF_INSTALL_ROOT/lib/qmf/tests
+ 
+ BASE=../../
+ include($$BASE/common.pri)
+--- a/tests/tests.pri
++++ b/tests/tests.pri
+@@ -2,7 +2,7 @@ macx {
+     QMAKE_MACOSX_DEPLOYMENT_TARGET=10.5
+ }
+ 
+-target.path+=$$QMF_INSTALL_ROOT/tests
++target.path+=$$QMF_INSTALL_ROOT/lib/qmf/tests
+ 
+ QMFPATH=../../src/libraries/qmfclient
+ DEPENDPATH += .
+--- qmf/tests/tests.pro.fix_tests_installation	2011-07-31 19:02:10.000000000 +0100
++++ qmf/tests/tests.pro	2011-08-04 17:07:21.517541880 +0100
+@@ -31,6 +31,6 @@ CONFIG += unittest
+ 
+ # Install test file description
+ test_description.files = tests.xml
+-test_description.path  = $$QMF_INSTALL_ROOT/tests
++test_description.path  = $$QMF_INSTALL_ROOT/lib/qmf/tests
+ 
+ INSTALLS += test_description
+--- a/tests/tst_python_email/tst_python_email.pro.fix_tests_installation	2011-07-31 19:02:10.157833673 +0100
++++ b/tests/tst_python_email/tst_python_email.pro	2011-08-03 18:14:14.592291043 +0100
+@@ -5,7 +5,7 @@ TARGET = tst_python_email
+ !symbian {
+     DEFINES += SRCDIR=\\\"$$_PRO_FILE_PWD_\\\"
+ 
+-    testdata.path = $$QMF_INSTALL_ROOT/tests/testdata
++    testdata.path = $$QMF_INSTALL_ROOT/lib/qmf/tests
+     testdata.files = testdata/*
+ 
+     INSTALLS += testdata
