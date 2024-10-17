@@ -12,7 +12,7 @@ Group:		Development/Other
 Version:	2.0.0
 Release:	%mkrel -c %{snap} 1
 License:	LGPLv2.1 with exception or GPLv3
-URL:		http://qt.gitorious.org/qt-labs/messagingframework
+URL:		https://qt.gitorious.org/qt-labs/messagingframework
 # git archive --remote git://gitorious.org/qt-labs/messagingframework.git \
 # --prefix=%{name}-%{version}-%{snap}/ %{snap} | xz > %{name}-%{version}-%{snap}.tar.xz
 Source0:	%{name}-%{version}-%{snap}.tar.xz
